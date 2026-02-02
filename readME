@@ -1,0 +1,70 @@
+# Simple Banking CLI App (Go)
+
+This is a simple command-line banking application written in Go.  
+It allows a user to:
+
+- Deposit money
+- Withdraw money
+- Check account balance
+- Handle invalid input safely
+
+The project is beginner-friendly and focuses on learning Go fundamentals such as
+functions, loops, user input, and error handling.
+
+---
+
+## Features
+
+- Reads user input from the terminal
+- Validates numeric input (prevents crashes)
+- Prevents withdrawal beyond available balance
+- Displays current balance on request
+
+---
+
+## How It Works
+
+1. The user enters an initial deposit amount.
+2. The program sets this as the starting balance.
+3. The user enters a withdrawal amount.
+4. If the withdrawal is greater than the balance, the program exits with an error message.
+5. Otherwise, the withdrawal is processed.
+6. The user can press `1` to check the current balance.
+
+---
+
+## Functions Overview
+
+### `readAmount(prompt string) int`
+- Displays a prompt to the user
+- Reads input from the terminal
+- Ensures the input is a valid integer
+- Repeats until valid input is entered
+
+### `deposit() int`
+- Calls `readAmount` to get a deposit value
+- Returns the deposit as the initial balance
+
+### `withDrawal(balance int, amount int) int`
+- Subtracts the withdrawal amount from the balance
+- Returns the updated balance
+
+### `checkBalance(b int)`
+- Prints the current balance to the console
+
+---
+
+## Requirements
+
+- Go 1.18 or higher
+
+---
+
+## How to Run
+
+1. Clone the repository or copy the code.
+2. Open a terminal in the project folder.
+3. Run the program:
+
+```bash
+go run main.go
