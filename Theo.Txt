@@ -1,0 +1,2 @@
+My name is Theophilus, I am learning how to write to file with package
+this is an appended file: Hello users!
