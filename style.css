@@ -1,0 +1,24 @@
+h1{
+    background-color: black;
+}
+.cal{
+    background-color: rgb(85, 42, 165);
+    color:aliceblue;
+    margin: 20px;
+}
+.sub{
+    background-color: green;
+}
+.p{
+    background-color: rgb(243, 215, 250);
+    color: darkblue;
+}
+button:hover {
+    background-color: brown;
+    color:blueviolet;
+}
+
+.pp{
+    background-color: black;
+    color:beige;
+}
