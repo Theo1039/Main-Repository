@@ -1,0 +1,28 @@
+class Bank:
+    def __init__(self, balance,name):
+        self.name = name
+        self.balance = balance
+        
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"Deposited Amount: {amount}")
+        
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdraw Amount: {self.amount} ")
+            
+    def check_balance(self):
+        print(f"remaining balance:", self.balance)
+    def initial_balance(self):
+        print(f"Initial Balance: {self.balance}")   
+    def detail(self):
+        print(f"Bank Name: Theos_Access\nAccount Holder: {self.name}")         
+        
+s = Bank(1000,"Theo")  
+s.detail()
+s.initial_balance()      
+s.deposit(2000)
+s.withdraw(30000)
+s.check_balance()
