@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Videos - Westsea</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Videos</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a> |
+            <a href="{% url 'order' %}">Order Now</a> |
+            <a href="{% url 'gallery' %}">Gallery</a>
+        </nav>
+    </header>
+
+    <section>
+        <p>Our latest videos:</p>
+
+        <!-- ✅ Paste YouTube iframe here -->
+        <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+            title="YouTube video player" frameborder="0" 
+            allowfullscreen>
+        </iframe>
+
+        <!-- You can add more videos below if needed -->
+    </section>
+</body>
+</html>

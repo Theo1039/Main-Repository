@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WestSea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta -->
+    <meta name="description" content="WestSea: Direct seafood ordering, contact info, gallery & live chat.">
+    <meta name="keywords" content="Seafood, WestSea, Order fish, Contact, Gallery, Fresh fish">
+    <meta name="author" content="WestSea">
+    
+    <!-- Open Graph (social preview) -->
+    <meta property="og:title" content="WestSea - Fresh Seafood Ordering">
+    <meta property="og:description" content="Order fresh seafood directly from the source. Contact us or browse our gallery.">
+    <meta property="og:image" content="{% static 'images/og-image.jpg' %}">
+    <meta property="og:url" content="https://westsea.onrender.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WestSea - Fresh Seafood Delivered">
+    <meta name="twitter:description" content="Order fresh seafood, contact us, view our gallery or chat live.">
+    <meta name="twitter:image" content="{% static 'images/twitter-card.jpg' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Lightbox for gallery (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <!-- Smooth transition & sticky nav -->
+    <style>
+        header, nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        body, header, nav, footer, main, .success-card, form {
+            transition: all 0.3s ease-in-out;
+        }
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 10px #999;
+            z-index: 10000;
+        }
+        #chatlog {
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        #chat-input {
+            width: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WestSea</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'order' %}">Order</a>
+        <a href="{% url 'gallery' %}">Gallery</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WestSea. All rights reserved.</p>
+    </footer>
+
+    <!-- Optional Static Chatbot -->
+    <div id="chatbot">
+        <div id="chatlog"></div>
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button onclick="sendChat()">Send</button>
+    </div>
+
+    <script>
+        function sendChat() {
+            const input = document.getElementById('chat-input');
+            const log = document.getElementById('chatlog');
+            const userMsg = input.value;
+            if (userMsg.trim()) {
+                log.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+                log.innerHTML += `<div><em>Bot:</em> This is a static response.</div>`;
+                input.value = '';
+                log.scrollTop = log.scrollHeight;
+            }
+        }
+    </script>
+
+    <!-- Lightbox Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" defer></script>
+
+    <!-- Chatbase (optional) -->
+    <script>
+      window.chatbaseConfig = {
+        chatbotId: "YOUR_CHATBOT_ID_HERE",
+      }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" id="chatbase-script" defer></script>
+
+    <!-- Tawk.to Live Chat -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6894949a87e7ae1923537452/1j2268vnl';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+</body>
+</html>
