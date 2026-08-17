@@ -1,0 +1,15 @@
+# Go File Handling Project
+
+This project demonstrates **basic file operations in Go** using separate packages.  
+It covers:
+
+- Writing text to a file
+- Appending content to an existing file
+- Reading content from a file
+
+The goal is to understand **Go packages**, **file handling**, and how to connect multiple packages to `main`.
+
+---
+
+## 📁 Project Structure
+
