@@ -12,15 +12,15 @@ while True:
         print("failed")
         exit()
 while True:
-     q = int(input("input password: "))
-     count += 1
-     if q == p:
+    q = int(input("input password: "))
+    count += 1
+    if q == p:
         print("success")
         break
-     if count == 3:
-         print(f"attempt {count} times")
-         break
-     else:
-        print(f"failed attempt{count}")  
-        print(f"attempt {count} times")    
-            
+    if count == 3:
+        print(f"attempt {count} times")
+        break
+    else:
+        print(f"failed attempt{count}")
+        print(f"attempt {count} times")
+
